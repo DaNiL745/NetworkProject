@@ -1,0 +1,9 @@
+- name: Send web packages
+  hosts: web_group
+  tasks:
+    - name: Send nginx
+      copy: src="/tmp/nginx.zip" dest="/tmp/"
+      tags: fetch
+    - name: Unpacking
+      unarchive: src="/tmp/nginx.zip" dest="/tmp/"
+      command: sudo dpkg -i /tmp/nginx/*.deb
