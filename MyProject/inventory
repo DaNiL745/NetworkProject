@@ -1,0 +1,8 @@
+user1 ansible_host=yourhost ansible_ssh_pass=password
+user2 ansible_host=yourhost ansible_ssh_pass=password
+
+[ueb_group]
+user1
+
+[db_group]
+user2
